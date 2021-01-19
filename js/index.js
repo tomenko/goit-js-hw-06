@@ -9,25 +9,29 @@ console.log(getUserNames(users));
 
 
 // 2.Получить массив объектов пользователей по цвету глаз (поле eyeColor).
-const getUsersWithEyeColor = (users, color) => users.reduce((arrEyeColor, user) => {
+/* const getUsersWithEyeColor = (users, color) => users.reduce((arrEyeColor, user) => {
     if (user.eyeColor === color) {
         arrEyeColor.push(user)
     }
     return arrEyeColor;
-}, []);
+}, []); */
 
-users.flatMap(user => user.skills)
+const getUsersWithEyeColor = (users, color) => users.filter((user) => user.eyeColor === color );
+
+
 
 console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
 
 // 3.Получить массив имен пользователей по полу (поле gender).
 
-const getUsersWithGender = (users, userGender) => users.reduce((arrGender, user) => {
+/* const getUsersWithGender = (users, userGender) => users.reduce((arrGender, user) => {
     if (user.gender === userGender) {
         arrGender.push(user.name)
     }
     return arrGender;
-}, []);
+}, []); */
+
+const getUsersWithGender = (users, userGender) => users.filter((user) => user.gender === userGender);
 
 console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
